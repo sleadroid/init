@@ -1,0 +1,15 @@
+#!/bin/bash
+guess=-1
+echo -e "Guess a number between 1 and 42\n"
+
+(( answer = RANDOM % 42 + 1 ))
+
+while (( guess != answer )); do
+	read -p "Enter guess: " guess
+	if (( guess < answer )); then
+		echo "Higher"
+	elif (( guess > answer )); then
+		echo "Lower"
+	fi
+done
+echo -e "Victory! ヽ(✦ ‿ ✦)ノ\n"
